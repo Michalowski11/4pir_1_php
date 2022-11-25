@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="style.css">
 <?php
 echo "Dziękujemy! Rejestracja przebiegła pomyślnie.<br>";
 echo "Wprowadzone dane:<br>";
@@ -6,15 +7,12 @@ echo "E-mail: " . trim($_POST['em']) . "<br>";
 echo "Telephone: " . trim($_POST['tlf']) . "<br>";
 echo "Zgłoszenie: " . trim($_POST['buty']) . "<br>";
 echo "<p>Wybrałeś dla swoich butów:</p><br>";
-echo "Kolor trampek: " . trim($_POST['kol']) . "<br>";
-echo "Rozmiar trampek: ";
-if (!empty($_POST['nrb[]'])) {
+echo "Kolor trampek: " . trim($_POST['kolor']) . "<br>";
+echo "Dodatki: ";
+if (!empty($_POST['opcje'])) {
     echo "<p>";
-    foreach ($_POST['nrb[]'] as $wartosc) {
-        echo "$wartosc<";
+    foreach ($_POST['opcje'] as $wartosc) {
+        echo "<p>$wartosc</p>";
     }
-    echo "</p>";
-} else {
-    echo "<p>" . $_POST['nrb[]'] . " Nie wybrano.</p>";}
-echo "Dodatki: " . trim($_POST['opc']) . "<br>";
-?>
+}
+echo "Rozmiar trampek: " . trim($_POST['nrb']);
