@@ -1,0 +1,18 @@
+kw_1
+SELECT tytul, rok, ocena FROM filmy, gatunki WHERE filmy.gatunki_id = gatunki.id "AND filmy.gatunki_id = 5;" lub "AND gatunki.nazwa="komedia";
+- Zapytanie 1: wybierające jedynie pola tytul, rok oraz ocena z tabeli filmy tylko dla gatunku komedii
+
+kw_2
+SELECT filmy.tytul, filmy.id, rezyserzy.imie, rezyserzy.nazwisko
+FROM filmy, rezyserzy
+WHERE filmy.rezyserzy_id = rezyserzy.id;
+- Zapytanie 2: wybierające jedynie pola id i tytul z tabeli filmy oraz odpowiadające im pola imie
+i nazwisko z tabeli rezyserzy. Należy posłużyć się relacją
+
+kw_3
+SELECT filmy.id, filmy.tytul
+FROM filmy
+WHERE filmy.rok = 2017
+AND filmy.ocena = 6;
+- Zapytanie 3: wybierające jedynie pola id oraz tytul z tabeli filmy tylko dla filmów z roku 2017, dla
+których wartość wynosi 6
